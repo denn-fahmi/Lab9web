@@ -2,7 +2,15 @@
 Nama: Den Fahmi Satria <p>
 Nim: 312410523 <p>
 Kelas: TI.24.A5 <p>
+# Praktikum 9 – PHP Modular dan Routing
 
+## Deskripsi
+Praktikum 9 merupakan lanjutan dari Praktikum 8 dengan tujuan menerapkan **konsep modularisasi** dan **routing** pada aplikasi CRUD berbasis PHP dan MySQL.  
+Setiap halaman menggunakan template yang sama dan pengaturan halaman dilakukan melalui satu file routing.
+
+## Struktur File Utama
+
+```
 lab9_php_modular/
 │
 ├── config/
@@ -21,93 +29,32 @@ lab9_php_modular/
 │
 ├── index.php
 └── style.css
----
+```
 
-## Langkah-langkah Praktikum
+## Penjelasan File
 
-### 1. Persiapan Lingkungan
-Menjalankan Apache dan MySQL melalui XAMPP sebagai web server dan database server.
-
-📷 *Screenshot XAMPP Control Panel*
-
----
-
-### 2. Membuat Database dan Tabel
-Database `latihan1` digunakan sebagai penyimpanan data barang yang akan dikelola menggunakan aplikasi CRUD.
-
-📷 *Screenshot pembuatan database dan tabel*
-
----
-
-### 3. Membuat Konfigurasi Database
-File `database.php` digunakan untuk mengatur koneksi antara aplikasi PHP dan database MySQL.
-
-📷 *Screenshot file database.php*
-
----
-
-### 4. Membuat Template Tampilan (Modularisasi)
-Template tampilan dibuat menggunakan:
-- `header.php` untuk bagian atas halaman
-- `footer.php` untuk bagian bawah halaman  
-
-Dengan modularisasi ini, setiap halaman memiliki tampilan yang sama dan konsisten.
-
-📷 *Screenshot file header.php dan footer.php*
-
----
-
-### 5. Implementasi Routing
-Routing dilakukan melalui file `index.php` dengan parameter URL `page`, sehingga halaman dapat diakses menggunakan format:
-
-
-📷 *Screenshot file index.php dan contoh URL routing*
-
----
-
-### 6. Menampilkan Data (Read)
-File `list.php` digunakan untuk menampilkan seluruh data barang dari database ke dalam tabel HTML.
-
-📷 *Screenshot halaman data barang*
-
----
-
-### 7. Menambah Data (Create)
-File `tambah.php` digunakan untuk menambahkan data barang baru ke dalam database melalui form input.
-
-📷 *Screenshot halaman tambah data*
-
----
-
-### 8. Mengubah Data (Update)
-File `ubah.php` digunakan untuk mengubah data barang yang sudah tersimpan di database.
-
-📷 *Screenshot halaman ubah data*
-
----
-
-### 9. Menghapus Data (Delete)
-File `hapus.php` digunakan untuk menghapus data barang berdasarkan ID yang dipilih.
-
-📷 *Screenshot proses hapus data*
-
----
-
-## Hasil Praktikum
-Aplikasi CRUD berbasis PHP dan MySQL berhasil dibuat dengan konsep:
-- Modularisasi template
-- Routing berbasis URL
-- Integrasi CRUD dengan database
-
-Semua fungsi CRUD (Create, Read, Update, Delete) berjalan dengan baik.
-
----
-
+### 1. index.php
+File **index.php** berfungsi sebagai **router utama**.  
+Routing dilakukan menggunakan parameter **page** pada URL untuk menentukan halaman yang akan ditampilkan.
+<img src="web9/index.PNG" width="700"> <p>
+### 2. list.php
+File **list.php** digunakan untuk **menampilkan seluruh data barang** yang tersimpan di database dalam bentuk tabel.  
+Pada halaman ini juga tersedia aksi untuk mengubah dan menghapus data.
+<img src="web9/list.PNG" width="700"> <p>
+### 3. tambah.php
+File **tambah.php** digunakan untuk **menambahkan data barang baru** ke dalam database melalui form input.  
+Setelah data berhasil disimpan, halaman akan diarahkan kembali ke halaman list.
+<img src="web9/tambah.PNG" width="700"> <p>
+<img src="web9/tambah.2.PNG" width="700"> <p>
+### 4. ubah.php
+File **ubah.php** digunakan untuk **mengubah data barang** yang sudah ada berdasarkan ID yang dipilih.  
+Data lama ditampilkan terlebih dahulu di dalam form sebelum dilakukan perubahan.
+<img src="web9/ubah.PNG" width="700"> <p>
+<img src="web9/ubah.2.PNG" width="700"> <p>
+### 5. hapus.php
+File **hapus.php** digunakan untuk **menghapus data barang** dari database berdasarkan ID.  
+Setelah data dihapus, halaman akan diarahkan kembali ke halaman list.
+<img src="web9/hapus.PNG" width="700"> <p>
 ## Kesimpulan
-Dengan menerapkan konsep modularisasi dan routing, struktur program menjadi lebih terorganisir, mudah dibaca, dan mudah dikembangkan.  
-Praktikum ini menunjukkan bahwa pemisahan kode dan penggunaan routing sangat membantu dalam pengembangan aplikasi web berbasis PHP.
-
----
-
-## Repository
-Repository ini dibuat untuk memenuhi tugas **Praktikum 9 – Pemrograman Web**.
+Dengan penerapan modularisasi dan routing, aplikasi CRUD menjadi lebih terstruktur dan mudah dikelola.  
+Penggunaan satu file routing memudahkan pengaturan halaman dan meningkatkan keteraturan kode program.
